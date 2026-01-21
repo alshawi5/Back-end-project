@@ -4,5 +4,5 @@ const verifyAdmin = (req, res, next) => {
   }
   next();
 };
-
-module.exports = verifyAdmin;
+// i added this to check the token for admin 
+module.exports = verifyAdmin; 

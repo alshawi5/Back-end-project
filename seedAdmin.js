@@ -32,5 +32,5 @@ async function seedAdmin() {
     process.exit(1);
   }
 }
-
 seedAdmin();
+// seed to create admin insted of manully 
