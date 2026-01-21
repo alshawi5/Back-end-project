@@ -2,7 +2,7 @@ const Books = require('../models/book');
 
 const getAllBooks = async (req, res) => {
   try {
-    const books = await Books.find().populate('owner', 'username');
+    const books = await Books.find({isAvailable:true}).populate('owner', 'username');
     res.json(books);
   } catch (err) {
     res.status(500).json({ err: err.message });
