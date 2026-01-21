@@ -1,6 +1,5 @@
 const Borrow = require('../models/Borrow');
 
-// Borrow a book
 const borrowBook = async (req, res) => {
   try {
     const borrow = await Borrow.create({
@@ -15,7 +14,6 @@ const borrowBook = async (req, res) => {
   }
 };
 
-// Get all borrows for logged-in user
 const getUserBorrows = async (req, res) => {
   try {
     const borrows = await Borrow.find({ user: req.user._id }).populate('book');
@@ -25,7 +23,6 @@ const getUserBorrows = async (req, res) => {
   }
 };
 
-// Update borrow
 const updateBorrow = async (req, res) => {
   try {
     const borrow = await Borrow.findByIdAndUpdate(req.params.id, req.body, { new: true });

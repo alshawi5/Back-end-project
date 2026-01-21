@@ -1,6 +1,5 @@
 const Review = require('../models/Review');
 
-// Create a review
 const createReview = async (req, res) => {
   try {
     const review = await Review.create({
@@ -15,7 +14,6 @@ const createReview = async (req, res) => {
   }
 };
 
-// Get all reviews for a book
 const getBookReviews = async (req, res) => {
   try {
     const reviews = await Review.find({ book: req.params.bookId }).populate('user', 'username');
