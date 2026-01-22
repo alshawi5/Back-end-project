@@ -7,6 +7,7 @@ const borrowBook = async (req, res) => {
       user: req.user._id,
       book: req.body.book,
       borrowDate: new Date(),
+      returnDate :new Date(),
       status: 'borrowed',
     });
     await Books.findByIdAndUpdate(req.body.book,{isAvailable:false})
